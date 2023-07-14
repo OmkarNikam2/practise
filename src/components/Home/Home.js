@@ -5,10 +5,13 @@ import "./home.css";
 export const Home = (props) => {
      const data = JSON.parse(localStorage.getItem('data')) 
      console.log(data)
-     const permissions = (data?.userData?.projectRoles?.map((mp) => mp.permissions));
-     console.log(permissions[1]?.name)
-    //  const newvalue = permissions.pop()
-    //  console.log(newvalue)
+     const permissions = (data.userData?.projectRoles[0].permissions);
+     console.log(permissions.map(obj=> obj.id ))
+      for (let i=0; i < permissions.length; i++){
+        console.log(permissions[i].id)
+      }
+     console.log(permissions[1].id)
+
   return (
     <div className="parents">
       <table>
@@ -51,10 +54,10 @@ export const Home = (props) => {
                 {data?.userData?.birthDate}
             </td>
             <td>
-                {data?.userData?.projectRoles?.map((mp)=>mp.name)}
+                {data.userData?.projectRoles?.map((mp)=>mp.name)}
             </td>
             <td>
-                {data?.userData?.projectRoles?.map((mp=>mp.project?.name))}
+                {data?.userData?.projectRoles[0].project.name}
             </td>
             <td>
                 {data?.userData?.projectRoles?.map((mp=>mp.project?.subject))}
@@ -63,7 +66,7 @@ export const Home = (props) => {
                 {data?.userData?.projectRoles?.map((mp)=>mp.role?.name)}
             </td>
             <td>
-                {data?.userData?.projectRoles?.map((mp)=>mp.scope)}
+                {data.userData?.projectRoles[0].permissions[1].name}
             </td>
             <td>
                 {data?.userData?.departmentRoles?.map((mp)=>mp.department?.organisation?.name)}
@@ -71,6 +74,7 @@ export const Home = (props) => {
         </tr>
         </tbody>
       </table>
+      <h1>Register new User</h1>
     </div>
   );
 };
