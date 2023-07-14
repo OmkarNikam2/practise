@@ -1,0 +1,9 @@
+.parents{
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(216, 107, 107);
+}
+table, th, td {
+    border: 1px solid black;
+  }

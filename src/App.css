@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+.outer-parent{
+  display: flex;
+  width: 100vw;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-section{
   display: flex;
   flex-direction: column;
+  width: 50%;
+  /* justify-content: center; */
   align-items: center;
+}
+.right-section{
+  display: flex;
+  width: 50%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.right-part-1{
+  position: relative;
+  height: 50%;
+  background-color: blanchedalmond;
+  width: 50%;
+  border: 5px solid rgb(28, 13, 28);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.part-1{
+  position: relative;
+  height: 50%;
+  width: 50%;
+  background-color: rgb(255, 219, 165);
 }
 
-.App-link {
-  color: #61dafb;
+.Box1{
+  background-color: red;
+  width: 25vw;
+  height: 25vh;
+  position: relative;
+  margin: 10px;
+  /* padding: 20px; */
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Box2{
+  background-color: yellowgreen;
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+.Box3{
+  background-color: aquamarine;
+  position: relative;
+  height: 50%;
+  width: 50%;
+}
+.Box4{
+  background-color: blueviolet;
+  position: relative;
+  height: 50%;
+  width: 50%;
+}
+.Box5{
+  background-color: brown;
+  position: relative;
+  height: 50%;
+  width: 50%;
+}
+.Box22{
+  background-color: rgb(8, 40, 40);
+  height: 10vh;
+  position: relative;
+  width: 5vw;
+  margin-left: 10px;
+}
+.Box33{
+  background-color: antiquewhite;
+  height: 25vw;
+  width: 25vw;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.Box33-1{
+  background-color: cadetblue;
+  border: none;
+}
+.Box33-2{
+  background-color: burlywood;
+  border: none;
+}
+.Box33-3{
+  background-color: chocolate;
+  border: none;
+  grid-column: 1/3;
+}
+.Box33-4{
+  background-color: crimson;
 }
