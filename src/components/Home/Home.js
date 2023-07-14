@@ -4,10 +4,15 @@ import "./home.css";
 
 export const Home = (props) => {
      const data = JSON.parse(localStorage.getItem('data')) 
-     
+     console.log(data)
+     const permissions = (data?.userData?.projectRoles?.map((mp) => mp.permissions));
+     console.log(permissions[1]?.name)
+    //  const newvalue = permissions.pop()
+    //  console.log(newvalue)
   return (
     <div className="parents">
       <table>
+        <tbody>
         <tr>
           <th>Name</th>
           <th>username</th>
@@ -15,55 +20,56 @@ export const Home = (props) => {
           <th>email</th>
           <th>mobileNumber</th>
           <th>gender</th>
-          <th>Project Id</th>
+          <th>BirthDate</th>
           <th>Project Name</th>
           <th>project Subject</th>
           <th>Role Id</th>
           <th>Role Name</th>
-          <th>Department Id</th>
-          <th>Department Name</th>
+          <th>Permission.name.2ndchild</th>
+          <th>Organization Name</th>
         </tr>
         <tr>
             <td>
-                {data.id}
+                {data?.userData?.name}
             </td>
             <td>
-                {data.token}
+                {data.username}
             </td>
             <td>
-                hi
+               {data?.userData?.surname}
             </td>
             <td>
-                hi
+                {data?.userData?.email}
             </td>
             <td>
-                hi
+                {data?.userData?.mobileNumber}
             </td>
             <td>
-                hi
+                {data?.userData?.gender}
             </td>
             <td>
-                hi
+                {data?.userData?.birthDate}
             </td>
             <td>
-                hi
+                {data?.userData?.projectRoles?.map((mp)=>mp.name)}
             </td>
             <td>
-                hi
+                {data?.userData?.projectRoles?.map((mp=>mp.project?.name))}
             </td>
             <td>
-                hi
+                {data?.userData?.projectRoles?.map((mp=>mp.project?.subject))}
             </td>
             <td>
-                hi
+                {data?.userData?.projectRoles?.map((mp)=>mp.role?.name)}
             </td>
             <td>
-                hi
+                {data?.userData?.projectRoles?.map((mp)=>mp.scope)}
             </td>
             <td>
-                hi
+                {data?.userData?.departmentRoles?.map((mp)=>mp.department?.organisation?.name)}
             </td>
         </tr>
+        </tbody>
       </table>
     </div>
   );
